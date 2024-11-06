@@ -1,0 +1,12 @@
+{
+  "name": "blaire9989.github.io",
+  "version": "1.0.0",
+  "description": "Free Bootstrap 5 Resume/CV Template for developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
