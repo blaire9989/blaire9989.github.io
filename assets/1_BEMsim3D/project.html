@@ -37,7 +37,7 @@
 
 <body bgcolor="#ebebeb">
     <div class ="main">
-        <div style="margin: 20pt 20pt 25pt 20pt; padding-top:10px">
+        <div style="margin: 20pt 40pt 15pt 40pt; padding-top:10px">
             <div>
             <center>
 		        <h2 class="product-name text-center">A Full-Wave Reference Simulator for Computing Surface Reflectance</h1>
@@ -59,47 +59,51 @@
             <br>
             <figure>
                 <a href="teaser.jpg"><img src="teaser.jpg" width="100%"></img>
-                    <figcaption>Wavelength-dependent BRDFs of two surfaces, computed using the original Harvey-Shack model, the generalized Harvey-Shack model, the Kirchhoff
+                    <figcaption>
+                        <h6 style="color:black; text-align:justify;">
+                        Wavelength-dependent BRDFs of two surfaces, computed using the original Harvey-Shack model, the generalized Harvey-Shack model, the Kirchhoff
                         model, the tangent plane method in [Xia et al. 2023], and our simulation. The incident direction is given by 𝜃𝑖 = 36° and 𝜙𝑖 = 90°, and BRDF values are visualized
                         for a large collection of outgoing directions. The models predict similar BRDFs for the smooth surface with isotropic bumps, while for the surface with
-                        spherical pits, our simulation predicts brighter color bands in the BRDF, which likely result from interference between reflection of different orders.</a>
+                        spherical pits, our simulation predicts brighter color bands in the BRDF, which likely result from interference between reflection of different orders.
+                        </h6>
                     </figcaption>
             </figure>
             </div>
 
            <div>
             <h3> Abstract</h3>
-            <div class="desc text-justify">
+            <h6 style="color:black; text-align:justify;">
                 Computing light reflection from rough surfaces is an important topic in
                 computer graphics. Reflection models developed based on geometric optics
                 fail to capture wave effects such as diffraction and interference, while
                 existing models based on physical optics approximations give erroneous
-                predictions under many circumstances (e.g. when multiple scattering from
-                the surface cannot be ignored).We present a scalable 3D full-wave simulator
+                predictions under many circumstances (e.g. when multiple scattering cannot 
+                be ignored). We present a scalable 3D full-wave simulator
                 for computing reference solutions to surface scattering problems, which
                 can be used to evaluate and guide the development of approximate models
                 for rendering. We investigate the range of validity for some existing
                 wave optics based reflection models; our results confirm these models for
                 low-roughness surfaces but also show that prior rendering methods do not
                 accurately predict the scattering behavior of some types of surfaces.
-            </div>
-            <div class="desc text-justify">
+            </h6>
+            <h6 style="color:black; text-align:justify;">
                 Our simulator is based on the boundary element method (BEM) and
                 accelerated using the adaptive integral method (AIM), and is implemented to
                 execute on modern GPUs. We demonstrate the simulator on domains up to
                 60 × 60 × 10 wavelengths, involving surface samples with significant height
                 variations. Furthermore, we propose a system for efficiently computing
                 BRDF values for large numbers of incident and outgoing directions,
-                by combining small simulations to characterize larger areas. Our simulator
-                will be released as an open-source toolkit for computing surface scattering.
-            </div>
+                by combining small simulations to characterize larger areas.
+            </h6>
            </div><br>
 
            <div>
             <h3>Fast Forward</h3>
-                <video width="100%" controls>
-                <source src="fast_forward.mp4" type="video/mp4">
-                </video>
+                <center>
+                    <video width="85%" controls>
+                    <source src="fastForward.mp4" type="video/mp4">
+                    </video>
+                </center>
             </div><br>
 
             <div>
@@ -130,8 +134,10 @@
                     Spherical pits
                 </div>
                 <br>
-                BRDF lobes computed for six different rough surfaces. Five incident directions were featured for each surface and five BRDF computation methods, including our full-wave simulation, were used.
-                Click on each surface to view the colorful BRDF plots!
+                <h6 style="color:black; text-align:justify;">
+                    BRDF lobes computed for six different rough surfaces. Five incident directions were featured for each surface and five BRDF computation methods, including our full-wave simulation, were used.
+                    Click on each surface to view the colorful BRDF plots!
+                </h6>
                 <br>
                 <br>
             </div>
@@ -165,8 +171,8 @@
             </div><br>
 
             <div>
-            <h3> Acknowledgement</h3>
-            <div class="desc text-justify">
+            <h3> Acknowledgements</h3>
+            <h6 style="color:black; text-align:justify;">
                 We would like to thank Dr. Anil Damle for his helpful suggestions
                 on iterative solvers. We also want to thank Nathaniel Sturniolo and
                 Dr. Lauren Zarzar for providing us with their experimental data on
@@ -175,7 +181,7 @@
                 Deng for her help with illustrating some of the figures in this paper.
                 This work is supported by the National Science Foundation under
                 grant IIS-1909467.
-            </div><br>
+            </h6><br>
             </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
