@@ -1,0 +1,90 @@
+<!DOCTYPE html><html xmlns=http://www.w3.org/1999/xhtml xmlns:fb=http://ogp.me/ns/fb#><title>RayWaveFabric</title><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1.0"><meta property=og:url content=https://blaire9989.github.io/assets/3_RayWaveFabric/project.html><meta property=og:title content="Realistic Cloth Rendering with a Ray-Wave Hybrid Shading Model"><meta property=og:description content><meta property=og:type content=website><link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:300,400,700&amp;display=swap" rel=stylesheet><script defer src=/blaire9989.github.io.ed0b5fbf.js></script><link href=/project.d57c4b99.css rel=stylesheet><link href=/project.5915d026.css rel=stylesheet><link rel=stylesheet href=https://www.w3schools.com/w3css/4/w3.css><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><style>.main{background-color:#fff;-webkit-border-radius:10px;width:1000px;margin-top:0;margin-left:auto;margin-right:auto;padding-top:24px}body{padding-top:24px;padding-bottom:24px}.main>div{padding-top:12px;padding-bottom:36px}a{text-decoration:none}h2.product-name{white-space:nowrap;font-size:28px;line-height:1.25}h3{margin-top:0;margin-bottom:14px}figure{margin:0 0 34px}figure h6{margin-bottom:0}.main>div>div:not(:first-child){margin-top:64px}.author-line{white-space:nowrap;font-size:17px}.inactive-button{cursor:default;opacity:.65}.render-grid{grid-template-columns:repeat(4,1fr);gap:10.5px;width:92%;margin:0 auto;display:grid}.render-grid img{cursor:zoom-in;width:100%;height:auto;display:block}.render-grid .spacer{display:none}.render-caption{text-align:left;margin-top:12px}.render-wide{width:92%;margin:42px auto 0}.WebContainer{width:100%;height:auto}</style><body bgcolor=#ebebeb>
+    <div class=main>
+        <div style="margin:20pt 40pt 15pt;padding-top:10px">
+            <div>
+            <center>
+                <h2 class="product-name text-center">Realistic Cloth Rendering with a Ray-Wave Hybrid Shading Model</h2>
+                <div class="author-line product-tagline text-center">
+                    <a href=https://blaire9989.github.io style=color:#4496ec>Yunchen Yu<sup>1,2</sup></a>,
+                    <a href=https://www.graphics.cornell.edu/~bjw/ style=color:#4496ec>Bruce Walter<sup>1</sup></a>,
+                    <a href=https://www.cs.cornell.edu/~srm/ style=color:#4496ec>Steve Marschner<sup>1,2</sup></a>,
+                    <a href=https://research.nvidia.com/labs/rtr/author/andrea-weidlich/ style=color:#4496ec>Andrea Weidlich<sup>2</sup></a>
+                </div>
+                <div class="product-tagline text-center"><sup>1</sup>Cornell University, <sup>2</sup>NVIDIA</div>
+                <br>
+                <div class="product-tagline text-center"> <b>ACM Transactions on Graphics (SIGGRAPH Asia 2025)</b></div>
+                <br>
+                <p><button class="w3-blue w3-btn"><a href=/assets/3_RayWaveFabric/paper.pdf class=text-white>Paper</a></button>
+                    <button class="w3-blue w3-btn"><a href=/assets/3_RayWaveFabric/supplemental.pdf class=text-white>Supplemental</a></button></p>
+            </center>
+            <br>
+            <figure>
+                <img src=/teaser.aa6ec81f.jpg width=100%>
+                <figcaption>
+                <h6 style=color:#000;text-align:justify>
+                    Our wave-ray hybrid ply model can simulate a wide range of woven fabrics, from translucent to completely opaque (left). By augmenting the average scattering response with per-instance variations, we can simulate imperfections on fabrics, resulting in a more realistic and visually rich appearance (right).
+                </h6>
+                </figcaption>
+            </figure>
+            </div>
+
+           <div>
+            <h3> Abstract</h3>
+            <h6 style=color:#000;text-align:justify>
+                Realistic fabric rendering is still a significant challenge due to their complex structures and varying fiber properties. We present a new fabric shading technique, which models both reflection and transmission using a hybrid of ray and wave optics methods, grounded in simulation data.
+            </h6>
+            <h6 style=color:#000;text-align:justify>
+                We target fabrics woven from yarns, each formed by twisting together one or more plies, which further contain twisted fibers. Our model is based on simulations that predict the scattering of a narrow Gaussian beam by a single ply. Comparing results from full-wave simulations and path tracing, we found that ray optics can accurately simulate the average far field scattering from an ensemble of plies, but not the variation among individual ply instances, and ray tracing overlooks important diffraction effects. Following these observations, our model is built from ray simulations performed for many ply instances, with simulation data fitted by Gaussian mixtures to be used during rendering. Wave simulations are used to calibrate noise functions that account for instance-to-instance variation, and an aperture diffraction model is used to handle light passing between plies and yarns.
+            </h6>
+            <h6 style=color:#000;text-align:justify>
+                The result is a hybrid model capable of producing realistic appearance and highlight structure in fabrics, while capturing spatial break-ups and irregularities and simulating the subtle color shifts and blurriness that occur in transmission. We validate our results by comparing rendered images with photographs, demonstrating the effectiveness of our approach in achieving realistic cloth rendering.
+            </h6>
+           </div>
+
+           <div>
+            <h3>Fast Forward Video</h3>
+                <center>
+                    <video width=85% controls>
+                    <source src=/fastForward.2c074e51.mp4 type=video/mp4>
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3>Rendered Images</h3>
+                <div class=render-grid>
+                    <a href=278dff6325ed9975><img src=/assets/3_RayWaveFabric/sample1.jpg></a>
+                    <a href=9f04fc56c72c3de3><img src=/assets/3_RayWaveFabric/sample2.jpg></a>
+                    <a href=e28bc8a4c6c4a26><img src=/assets/3_RayWaveFabric/sample3.jpg></a>
+                    <a href=33f619677485e341><img src=/assets/3_RayWaveFabric/sample4.jpg></a>
+                    <a href=6b7f8a3252834e49><img src=/assets/3_RayWaveFabric/sample5.jpg></a>
+                    <a href=44388fa13d22480e><img src=/assets/3_RayWaveFabric/sample6.jpg></a>
+                    <a href=cb0cff9a63528c65><img src=/assets/3_RayWaveFabric/sample7.jpg></a>
+                </div>
+                <h6 class=render-caption style=color:#000>Individual cloth samples: orange polyester satin, white silk organza, cream cotton twill, gray wool twill, black polyester plain weave, beige silk satin, and blue cotton satin.</h6>
+
+                <div class=render-wide>
+                    <a href=781ffd142ccd108e><img src=/assets/3_RayWaveFabric/fold_merged.png width=100%></a>
+                </div>
+                <h6 class=render-caption style=color:#000>Several fabrics rendered without and with wave optics based structural irregularities. While the overall appearance is similar, the visual break-ups introduced with our noise functions significantly improve realism.</h6>
+            </div>
+
+            <div>
+            <h3>Supplemental Video</h3>
+                <center>
+                    <video width=85% controls>
+                    <source src=/suppVideo.ab4596c3.mp4 type=video/mp4>
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3> Acknowledgements</h3>
+            <h6 style=color:#000;text-align:justify>
+                This work is supported by the National Science Foundation under grant IIS-2212084. We give special thanks to Longxiulin Deng for her help on our supplemental video and several result images.
+            </h6>
+            </div>
+        </div>
+    </div>
+
+

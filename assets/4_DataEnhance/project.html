@@ -1,0 +1,335 @@
+<!DOCTYPE html><html xmlns=http://www.w3.org/1999/xhtml xmlns:fb=http://ogp.me/ns/fb#><title>DataEnhance</title><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1.0"><meta property=og:url content=https://blaire9989.github.io/assets/4_DataEnhance/project.html><meta property=og:title content="Toward Richer Material Generation via Procedural Data Enhancement"><meta property=og:description content><meta property=og:type content=website><link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:300,400,700&amp;display=swap" rel=stylesheet><script defer src=/blaire9989.github.io.ed0b5fbf.js></script><link href=/project.4d6fd6d6.css rel=stylesheet><link href=/project.fc7c3711.css rel=stylesheet><link rel=stylesheet href=https://www.w3schools.com/w3css/4/w3.css><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel=stylesheet><style>.main{background-color:#fff;-webkit-border-radius:10px;width:1000px;margin-top:0;margin-left:auto;margin-right:auto;padding-top:24px}body{padding-top:24px;padding-bottom:24px}.main>div{padding-top:12px;padding-bottom:36px}a{text-decoration:none}h2.product-name{white-space:nowrap;font-size:28px;line-height:1.25}h3{margin-top:0;margin-bottom:14px}figure{margin:0 0 34px}figure h6{margin-bottom:0}.main>div>div:not(:first-child){margin-top:64px}.author-line{white-space:nowrap;font-size:17px}.inactive-button{cursor:default;opacity:.65}.enhancement-example{margin-bottom:42px}.enhancement-grid{grid-template-columns:repeat(5,1fr);gap:10.5px;width:86%;margin:0 auto;display:grid}.enhancement-grid img{cursor:zoom-in;width:100%;height:auto;display:block}.enhancement-caption{text-align:center;margin-top:12px}.genmat-grid{grid-template-columns:repeat(4,1fr);gap:10.5px;width:86%;margin:0 auto;display:grid}.genmat-tile{display:block;position:relative}.genmat-tile img{cursor:zoom-in;width:100%;height:auto;display:block}.genmat-label{color:#000;font-size:16px;font-weight:400;line-height:1;position:absolute;top:5px;left:7px}.genmat-intro{margin-bottom:24px}.trellis-intro{margin-top:36px;margin-bottom:24px}.trellis-example{margin-bottom:42px}.trellis-grid{grid-template-columns:repeat(4,1fr);gap:10.5px;width:86%;margin:0 auto;display:grid}.trellis-grid img{cursor:zoom-in;width:100%;height:auto;display:block}.trellis-heading{text-align:center;font-size:13px;line-height:1.2}.trellis-caption{text-align:center;margin-top:12px;font-size:18px}.WebContainer{width:100%;height:auto}</style><body bgcolor=#ebebeb>
+    <div class=main>
+        <div style="margin:20pt 40pt 15pt;padding-top:10px">
+            <div>
+            <center>
+                <h2 class="product-name text-center">Toward Richer Material Generation via Procedural Data Enhancement</h2>
+                <div class="author-line product-tagline text-center">
+                    <a href=https://blaire9989.github.io style=color:#4496ec>Yunchen Yu<sup>1,2</sup></a>,
+                    <a href=https://research.nvidia.com/labs/rtr/author/jacob-munkberg/ style=color:#4496ec>Jacob Munkberg<sup>2</sup></a>,
+                    <a href=https://research.nvidia.com/labs/rtr/author/jon-hasselgren/ style=color:#4496ec>Jon Hasselgren<sup>2</sup></a>,
+                    <a href=https://research.nvidia.com/labs/rtr/author/chris-cummings/ style=color:#4496ec>Chris Cummings<sup>2</sup></a>,
+                    <a href=https://www.cs.cornell.edu/~srm/ style=color:#4496ec>Steve Marschner<sup>1,2</sup></a>,
+                    <a href=https://research.nvidia.com/labs/rtr/author/andrea-weidlich/ style=color:#4496ec>Andrea Weidlich<sup>2</sup></a>
+                </div>
+                <div class="product-tagline text-center"><sup>1</sup>Cornell University, <sup>2</sup>NVIDIA</div>
+                <br>
+                <div class="product-tagline text-center"> <b>SIGGRAPH 2026 Conference Proceedings</b></div>
+                <br>
+                <p><button class="w3-blue w3-btn"><a href=/assets/4_DataEnhance/paper.pdf class=text-white>Paper</a></button>
+                    <button class="w3-blue w3-btn"><a href=/assets/4_DataEnhance/supplemental.pdf class=text-white>Supplemental</a></button>
+                    <button class="inactive-button w3-blue w3-btn"><span class=text-white>Code</span></button>
+                    <button class="inactive-button w3-blue w3-btn"><span class=text-white>Data</span></button></p>
+            </center>
+            <br>
+            <figure>
+                <img src=/teaser.84f67824.png width=100%>
+                <figcaption>
+                <h6 style=color:#000;text-align:justify>
+                    Creating complex materials at scale is challenging. We introduce a material enhancement procedure that uplifts PBR materials into rich appearances compactly represented as neural materials. By adding surface effects, we can make an object appear waxy, peach-fuzzed, or sugar-coated (top row). Similarly, we can introduce subtle spatial specular breakup, as well as large-scale changes like clearcoat or dust layers (bottom row). Insets show the textures used by each model. Normal maps are applied unchanged to the neural material.
+                </h6>
+                </figcaption>
+            </figure>
+            </div>
+
+           <div>
+            <h3> Abstract</h3>
+            <h6 style=color:#000;text-align:justify>
+                Generative models for material creation are fundamentally limited by the quality and expressivity of available training data. Simple physically based rendering (PBR) materials, which combine a diffuse term with a single-lobe specular component, are commonly used for training but are insufficient to capture many important visual effects present in real materials.
+            </h6>
+            <h6 style=color:#000;text-align:justify>
+                We present a method that enhances simple PBR materials to more expressive ones, by augmenting the single GGX specular lobe into a layered model that captures a broader range of non-diffuse effects. Starting from a simple material, we procedurally construct a corresponding multi-lobe non-diffuse component guided by physical priors, enabling effects such as dust, clearcoat, and layered scattering. To provide a compact representation for downstream applications, we encode this component as a neural material with a shared 6D latent space, where each material instance is represented by two latent textures and decoded by a pretrained universal MLP. We further regularize the latent space to support material generation.
+            </h6>
+            <h6 style=color:#000;text-align:justify>
+                The resulting neural material dataset enables training generative models for richer material creation. To demonstrate this application, we finetune a video diffusion model to produce neural latent textures that encode our multi-lobe material, and present generative results as proof of feasibility. Our procedural data enhancement approach is an important step toward improving expressivity in material generation.
+            </h6>
+           </div>
+
+           <div>
+            <h3>Fast Forward Video</h3>
+                <center>
+                    <video width=85% controls>
+                    <source src=/fastForward.455a4465.mp4 type=video/mp4>
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3>Examples of Enhanced Materials</h3>
+                <h6 style=color:#000;text-align:justify>
+                    In each image group below, the first row shows the original PBR materials, the second row shows enhanced versions reconstructed as neural materials, and the third row shows differences between the original and enhanced materials.
+                </h6>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=1a1ce13731068d97><img src=/assets/4_DataEnhance/type0/0_0_pbr_bell_pbr.png></a>
+                        <a href=90544d27cb78de9e><img src=/assets/4_DataEnhance/type0/0_1_pbr_horse_pbr.png></a>
+                        <a href=2175a1321520d412><img src=/assets/4_DataEnhance/type0/0_2_pbr_container_pbr.png></a>
+                        <a href=52ad896d5ef21a57><img src=/assets/4_DataEnhance/type0/0_3_pbr_tower_pbr.png></a>
+                        <a href=16f138fe25495693><img src=/assets/4_DataEnhance/type0/0_4_pbr_water_pbr.png></a>
+                        <a href=d75e1392fccf686e><img src=/assets/4_DataEnhance/type0/1_0_enhanced_bell_neu.png></a>
+                        <a href=84dd47c251b21893><img src=/assets/4_DataEnhance/type0/1_1_enhanced_horse_neu.png></a>
+                        <a href=fbcc72ded60c9b7a><img src=/assets/4_DataEnhance/type0/1_2_enhanced_container_neu.png></a>
+                        <a href=667adae150543c85><img src=/assets/4_DataEnhance/type0/1_3_enhanced_tower_neu.png></a>
+                        <a href=e2dd04518368dccd><img src=/assets/4_DataEnhance/type0/1_4_enhanced_water_neu.png></a>
+                        <a href=aa85f769c909cb7d><img src=/assets/4_DataEnhance/type0/2_0_flip_flip.bell.png></a>
+                        <a href=f3b0cccadd50bec8><img src=/assets/4_DataEnhance/type0/2_1_flip_flip.horse.png></a>
+                        <a href=44225fac0552f8e4><img src=/assets/4_DataEnhance/type0/2_2_flip_flip.container.png></a>
+                        <a href=72f396e4d2790490><img src=/assets/4_DataEnhance/type0/2_3_flip_flip.tower.png></a>
+                        <a href=87328f73253300f8><img src=/assets/4_DataEnhance/type0/2_4_flip_flip.water.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 0: Haze</h6>
+                </div>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=599d964f0675d1d8><img src=/assets/4_DataEnhance/type1/0_0_pbr_type_1_0.png></a>
+                        <a href=1720fc042a007fe><img src=/assets/4_DataEnhance/type1/0_1_pbr_type_1_1.png></a>
+                        <a href=d8cc254a97208241><img src=/assets/4_DataEnhance/type1/0_2_pbr_type_1_2.png></a>
+                        <a href=8a0de0e15daa75e5><img src=/assets/4_DataEnhance/type1/0_3_pbr_type_1_3.png></a>
+                        <a href=fa3f2899d7430caa><img src=/assets/4_DataEnhance/type1/0_4_pbr_type_1_4.png></a>
+                        <a href=5ed5dab98a92e7a3><img src=/assets/4_DataEnhance/type1/1_0_enhanced_type_1_0.png></a>
+                        <a href=ed2a6cdfa80fcfb3><img src=/assets/4_DataEnhance/type1/1_1_enhanced_type_1_1.png></a>
+                        <a href=901052e6295aa67e><img src=/assets/4_DataEnhance/type1/1_2_enhanced_type_1_2.png></a>
+                        <a href=9639449b535f0a45><img src=/assets/4_DataEnhance/type1/1_3_enhanced_type_1_3.png></a>
+                        <a href=3475197ce1dd1043><img src=/assets/4_DataEnhance/type1/1_4_enhanced_type_1_4.png></a>
+                        <a href=7ff746338f44b217><img src=/assets/4_DataEnhance/type1/2_0_flip_flip.type_1_0.png></a>
+                        <a href=1f5f0ed4cdc0c485><img src=/assets/4_DataEnhance/type1/2_1_flip_flip.type_1_1.png></a>
+                        <a href=bbbc51b979058df3><img src=/assets/4_DataEnhance/type1/2_2_flip_flip.type_1_2.png></a>
+                        <a href=134f9c63abfd5de0><img src=/assets/4_DataEnhance/type1/2_3_flip_flip.type_1_3.png></a>
+                        <a href=4c42a75f9cfcdfc1><img src=/assets/4_DataEnhance/type1/2_4_flip_flip.type_1_4.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 1: Dust</h6>
+                </div>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=6025dc7b25e08491><img src=/assets/4_DataEnhance/type2/0_0_pbr_type_2_0.png></a>
+                        <a href=f3a50b568145933a><img src=/assets/4_DataEnhance/type2/0_1_pbr_paintvase_pbr.png></a>
+                        <a href=560d18163dba66a1><img src=/assets/4_DataEnhance/type2/0_2_pbr_elephant_pbr.png></a>
+                        <a href=231581bfe278d2f1><img src=/assets/4_DataEnhance/type2/0_3_pbr_kettle_pbr.png></a>
+                        <a href=4adc095e3d551078><img src=/assets/4_DataEnhance/type2/0_4_pbr_carplate_pbr.png></a>
+                        <a href=e7b64a074928db53><img src=/assets/4_DataEnhance/type2/1_0_enhanced_type_2_0.png></a>
+                        <a href=9e79e58b33d7033e><img src=/assets/4_DataEnhance/type2/1_1_enhanced_paintvase_neu.png></a>
+                        <a href=17c7ebf5d60316c9><img src=/assets/4_DataEnhance/type2/1_2_enhanced_elephant_neu.png></a>
+                        <a href=c2ea5fade570a584><img src=/assets/4_DataEnhance/type2/1_3_enhanced_kettle_neu.png></a>
+                        <a href=eaad80853e6cad5d><img src=/assets/4_DataEnhance/type2/1_4_enhanced_carplate_neu.png></a>
+                        <a href=ad2e42dfb1e089db><img src=/assets/4_DataEnhance/type2/2_0_flip_flip.type_2_0.png></a>
+                        <a href=896d801af1a61028><img src=/assets/4_DataEnhance/type2/2_1_flip_flip.paintvase.png></a>
+                        <a href=75ec17d093dc728><img src=/assets/4_DataEnhance/type2/2_2_flip_flip.elephant.png></a>
+                        <a href=74e2ce49e91f38c9><img src=/assets/4_DataEnhance/type2/2_3_flip_flip.kettle.png></a>
+                        <a href=f6970a79400a733c><img src=/assets/4_DataEnhance/type2/2_4_flip_flip.carplate.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 2: Clearcoat</h6>
+                </div>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=3c40f8437065a9a1><img src=/assets/4_DataEnhance/type3/0_0_pbr_type_3_0.png></a>
+                        <a href=bc1e8328bebeb94e><img src=/assets/4_DataEnhance/type3/0_1_pbr_clock_pbr.png></a>
+                        <a href=28124ee69794f6ed><img src=/assets/4_DataEnhance/type3/0_2_pbr_woodbox_pbr.png></a>
+                        <a href=42df28460c69ce5d><img src=/assets/4_DataEnhance/type3/0_3_pbr_leatherseat_pbr.png></a>
+                        <a href=5811d4fef1be6172><img src=/assets/4_DataEnhance/type3/0_4_pbr_type_3_2.png></a>
+                        <a href=78feef72bcfce875><img src=/assets/4_DataEnhance/type3/1_0_enhanced_type_3_0.png></a>
+                        <a href=a6b4920f31da0879><img src=/assets/4_DataEnhance/type3/1_1_enhanced_clock_neu.png></a>
+                        <a href=ed515ebad37cba6><img src=/assets/4_DataEnhance/type3/1_2_enhanced_woodbox_neu.png></a>
+                        <a href=43378724a8ffed23><img src=/assets/4_DataEnhance/type3/1_3_enhanced_leatherseat_neu.png></a>
+                        <a href=267168412d558334><img src=/assets/4_DataEnhance/type3/1_4_enhanced_type_3_2.png></a>
+                        <a href=ee6610fce1884fc0><img src=/assets/4_DataEnhance/type3/2_0_flip_flip.type_3_0.png></a>
+                        <a href=e00d762aa122df10><img src=/assets/4_DataEnhance/type3/2_1_flip_flip.clock.png></a>
+                        <a href=1ce68a94a7122c5><img src=/assets/4_DataEnhance/type3/2_2_flip_flip.woodbox.png></a>
+                        <a href=aa8bc9457721f8c1><img src=/assets/4_DataEnhance/type3/2_3_flip_flip.leatherseat.png></a>
+                        <a href=e77f2b7306e58680><img src=/assets/4_DataEnhance/type3/2_4_flip_flip.type_3_2.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 3: Dust + Clearcoat</h6>
+                </div>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=8e8b212bde0d690c><img src=/assets/4_DataEnhance/type4/0_0_pbr_teddy_pbr.png></a>
+                        <a href=fed530f4b62d0947><img src=/assets/4_DataEnhance/type4/0_1_pbr_piggy_pbr.png></a>
+                        <a href=604b63db6379321a><img src=/assets/4_DataEnhance/type4/0_2_pbr_cactus_pbr.png></a>
+                        <a href=600aca4e17ff92e5><img src=/assets/4_DataEnhance/type4/0_3_pbr_greenduck_pbr.png></a>
+                        <a href=f1f2cdd2e64ebfea><img src=/assets/4_DataEnhance/type4/0_4_pbr_dirtysofa_pbr.png></a>
+                        <a href=145035e842b98a><img src=/assets/4_DataEnhance/type4/1_0_enhanced_teddy_neu.png></a>
+                        <a href=587d980224728ccd><img src=/assets/4_DataEnhance/type4/1_1_enhanced_piggy_neu.png></a>
+                        <a href=3e25cbefd46fcaa2><img src=/assets/4_DataEnhance/type4/1_2_enhanced_cactus_neu.png></a>
+                        <a href=9d8399b75047de60><img src=/assets/4_DataEnhance/type4/1_3_enhanced_greenduck_neu.png></a>
+                        <a href=34737cecc00599ff><img src=/assets/4_DataEnhance/type4/1_4_enhanced_dirtysofa_neu.png></a>
+                        <a href=ebb4866c1c0821f7><img src=/assets/4_DataEnhance/type4/2_0_flip_flip.teddy.png></a>
+                        <a href=ec2c5f35f73da063><img src=/assets/4_DataEnhance/type4/2_1_flip_flip.piggy.png></a>
+                        <a href=aa08cde76f7533e><img src=/assets/4_DataEnhance/type4/2_2_flip_flip.cactus.png></a>
+                        <a href=44e4939d5cc01f9d><img src=/assets/4_DataEnhance/type4/2_3_flip_flip.greenduck.png></a>
+                        <a href=2ce9e718ce0b5fb0><img src=/assets/4_DataEnhance/type4/2_4_flip_flip.dirtysofa.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 4: Fuzz + Inner Scatter + Subcutaneous Scatter</h6>
+                </div>
+                <div class=enhancement-example>
+                    <div class=enhancement-grid>
+                        <a href=ffa088ff05eac373><img src=/assets/4_DataEnhance/type5/0_0_pbr_melonpillow_pbr.png></a>
+                        <a href=bc1b077dd78aad3b><img src=/assets/4_DataEnhance/type5/0_1_pbr_yellowduck_pbr.png></a>
+                        <a href=4bed911efad90e4><img src=/assets/4_DataEnhance/type5/0_2_pbr_jellyshoe_pbr.png></a>
+                        <a href=d6eb9f3ab79dc62d><img src=/assets/4_DataEnhance/type5/0_3_pbr_balloon_pbr.png></a>
+                        <a href=94557b1536f3cfa7><img src=/assets/4_DataEnhance/type5/0_4_pbr_pumpkin_pbr.png></a>
+                        <a href=eea579999f9270c5><img src=/assets/4_DataEnhance/type5/1_0_enhanced_melonpillow_neu.png></a>
+                        <a href=b9a3f96d1d0c8ff><img src=/assets/4_DataEnhance/type5/1_1_enhanced_yellowduck_neu.png></a>
+                        <a href=1cd826529b097d23><img src=/assets/4_DataEnhance/type5/1_2_enhanced_jellyshoe_neu.png></a>
+                        <a href=3b33ca6f56fd2906><img src=/assets/4_DataEnhance/type5/1_3_enhanced_balloon_neu.png></a>
+                        <a href=a3dd9790470d5968><img src=/assets/4_DataEnhance/type5/1_4_enhanced_pumpkin_neu.png></a>
+                        <a href=650c8d349f049e21><img src=/assets/4_DataEnhance/type5/2_0_flip_flip.melonpillow.png></a>
+                        <a href=65dc364715f7280b><img src=/assets/4_DataEnhance/type5/2_1_flip_flip.yellowduck.png></a>
+                        <a href=f8fcd3dc43dc6e8b><img src=/assets/4_DataEnhance/type5/2_2_flip_flip.jellyshoe.png></a>
+                        <a href=49fa2cc91b6fe53a><img src=/assets/4_DataEnhance/type5/2_3_flip_flip.balloon.png></a>
+                        <a href=791426a60e8a7b8e><img src=/assets/4_DataEnhance/type5/2_4_flip_flip.pumpkin.png></a>
+                    </div>
+                    <h6 class=enhancement-caption style=color:#000>Type 5: Fuzz + Clearcoat + Inner Scatter + Subcutaneous Scatter</h6>
+                </div>
+            </div>
+
+            <div>
+            <h3>Generative Results</h3>
+                <h6 class=genmat-intro style=color:#000;text-align:justify>
+                    We first present our generated neural materials for all the 3D models in our test set. Intended enhancement types of these assets' reference neural materials are haze (a), dust (b, c), clearcoat (d, e, f, g), dust + clearcoat (h, i), fuzz + scatter (j, k, l, m), all lobes (n, o, p).
+                </h6>
+                <div class=genmat-grid>
+                    <a class=genmat-tile href=bab9d56469572f3a><img src=/assets/4_DataEnhance/genmat0/a_car_beetle.png><span class=genmat-label>(a)</span></a>
+                    <a class=genmat-tile href=762a5b5802034454><img src=/assets/4_DataEnhance/genmat0/b_vase_gold.png><span class=genmat-label>(b)</span></a>
+                    <a class=genmat-tile href=f581c366e85a31e8><img src=/assets/4_DataEnhance/genmat0/c_shoes.png><span class=genmat-label>(c)</span></a>
+                    <a class=genmat-tile href=f7386739ecf92571><img src=/assets/4_DataEnhance/genmat0/d_pepsi_can.png><span class=genmat-label>(d)</span></a>
+                    <a class=genmat-tile href=345527c89a1e4018><img src=/assets/4_DataEnhance/genmat0/e_vase_marble.png><span class=genmat-label>(e)</span></a>
+                    <a class=genmat-tile href=a348face78719184><img src=/assets/4_DataEnhance/genmat0/f_kettle_china.png><span class=genmat-label>(f)</span></a>
+                    <a class=genmat-tile href=92aa04d43cf2ba19><img src=/assets/4_DataEnhance/genmat0/g_bar_stool.png><span class=genmat-label>(g)</span></a>
+                    <a class=genmat-tile href=8e727b11ec191d8e><img src=/assets/4_DataEnhance/genmat0/h_pomegranate.png><span class=genmat-label>(h)</span></a>
+                    <a class=genmat-tile href=92d68187adca554e><img src=/assets/4_DataEnhance/genmat0/i_kettle_copper.png><span class=genmat-label>(i)</span></a>
+                    <a class=genmat-tile href=7fee63917eee812a><img src=/assets/4_DataEnhance/genmat0/j_lamp.png><span class=genmat-label>(j)</span></a>
+                    <a class=genmat-tile href=a3968d5d11656849><img src=/assets/4_DataEnhance/genmat0/k_monkey.png><span class=genmat-label>(k)</span></a>
+                    <a class=genmat-tile href=1783409641b92c14><img src=/assets/4_DataEnhance/genmat0/l_cat.png><span class=genmat-label>(l)</span></a>
+                    <a class=genmat-tile href=27b90501fdc0cac9><img src=/assets/4_DataEnhance/genmat0/m_leather_chair.png><span class=genmat-label>(m)</span></a>
+                    <a class=genmat-tile href=670d02ea2db237c3><img src=/assets/4_DataEnhance/genmat0/n_mixer.png><span class=genmat-label>(n)</span></a>
+                    <a class=genmat-tile href=a6f673215e03fb31><img src=/assets/4_DataEnhance/genmat0/o_icecream.png><span class=genmat-label>(o)</span></a>
+                    <a class=genmat-tile href=60923435f3fb0bd1><img src=/assets/4_DataEnhance/genmat0/p_grapes.png><span class=genmat-label>(p)</span></a>
+                </div>
+
+                <h6 class=trellis-intro style=color:#000;text-align:justify>
+                    We compare our generation with TRELLIS.2 and render the test set materials in four variants: the reference, hand-crafted neural materials, PBR materials generated from TRELLIS.2, base color from TRELLIS.2 combined with neural, non-diffuse materials generated from our method, and known base color combined with our generated neural materials.
+                </h6>
+
+                <div class=trellis-example>
+                    <div class=trellis-grid>
+                        <div class=trellis-heading>Reference</div>
+                        <div class=trellis-heading>TRELLIS.2</div>
+                        <div class=trellis-heading>Our<sub>trellis</sub></div>
+                        <div class=trellis-heading>Our<sub>ref</sub></div>
+                        <a href=6c2c6f8d6e1154f9><img src=/assets/4_DataEnhance/genmat1/0_0_reference_car.png></a>
+                        <a href=a015002fb6a77e15><img src=/assets/4_DataEnhance/genmat1/0_1_trellis2_car.png></a>
+                        <a href=3a1229365e797f2d><img src=/assets/4_DataEnhance/genmat1/0_2_our_trellis_car.png></a>
+                        <a href=c885d6d77505ceb8><img src=/assets/4_DataEnhance/genmat1/0_3_our_ref_car.png></a>
+                        <a href=7ecdc7c7b728b060><img src=/assets/4_DataEnhance/genmat1/1_0_reference_marble.png></a>
+                        <a href=16b4df68df091096><img src=/assets/4_DataEnhance/genmat1/1_1_trellis2_marble.png></a>
+                        <a href=f0292012afbf018><img src=/assets/4_DataEnhance/genmat1/1_2_our_trellis_marble.png></a>
+                        <a href=cfa164c8866ed8d3><img src=/assets/4_DataEnhance/genmat1/1_3_our_ref_marble.png></a>
+                        <a href=647e58cc1e7aaf36><img src=/assets/4_DataEnhance/genmat1/2_0_reference_shoes.png></a>
+                        <a href=4062b512c8314e03><img src=/assets/4_DataEnhance/genmat1/2_1_trellis2_shoes.png></a>
+                        <a href=b67c31050dcc1430><img src=/assets/4_DataEnhance/genmat1/2_2_our_trellis_shoes.png></a>
+                        <a href=a7239c8e6244557><img src=/assets/4_DataEnhance/genmat1/2_3_our_ref_shoes.png></a>
+                        <a href=828cc07af46405a8><img src=/assets/4_DataEnhance/genmat1/3_0_reference_pepsi.png></a>
+                        <a href=5414c3fcd97f063a><img src=/assets/4_DataEnhance/genmat1/3_1_trellis2_pepsi.png></a>
+                        <a href=9d974ec6553fe6a2><img src=/assets/4_DataEnhance/genmat1/3_2_our_trellis_pepsi.png></a>
+                        <a href=800ff56c24365df8><img src=/assets/4_DataEnhance/genmat1/3_3_our_ref_pepsi.png></a>
+                    </div>
+                    <h5 class=trellis-caption style=color:#000>Test Set Objects (a)--(d)</h5>
+                </div>
+
+                <div class=trellis-example>
+                    <div class=trellis-grid>
+                        <div class=trellis-heading>Reference</div>
+                        <div class=trellis-heading>TRELLIS.2</div>
+                        <div class=trellis-heading>Our<sub>trellis</sub></div>
+                        <div class=trellis-heading>Our<sub>ref</sub></div>
+                        <a href=ba24dea8868b6d13><img src=/assets/4_DataEnhance/genmat2/0_0_reference_vase.png></a>
+                        <a href=910e13400b768954><img src=/assets/4_DataEnhance/genmat2/0_1_trellis2_vase.png></a>
+                        <a href=1ea4bf2bf93dbf44><img src=/assets/4_DataEnhance/genmat2/0_2_our_trellis_vase.png></a>
+                        <a href=ff78fc8e7f3f405f><img src=/assets/4_DataEnhance/genmat2/0_3_our_ref_vase.png></a>
+                        <a href=20914e236ed36469><img src=/assets/4_DataEnhance/genmat2/1_0_reference_china.png></a>
+                        <a href=378159dbaf6f7bee><img src=/assets/4_DataEnhance/genmat2/1_1_trellis2_china.png></a>
+                        <a href=7fa4b79ca6173c95><img src=/assets/4_DataEnhance/genmat2/1_2_our_trellis_china.png></a>
+                        <a href=c50ee39d0f57b127><img src=/assets/4_DataEnhance/genmat2/1_3_our_ref_china.png></a>
+                        <a href=9c931d154ecaff8><img src=/assets/4_DataEnhance/genmat2/2_0_reference_stool.png></a>
+                        <a href=a89edccd09450485><img src=/assets/4_DataEnhance/genmat2/2_1_trellis2_stool.png></a>
+                        <a href=87beb0062e981391><img src=/assets/4_DataEnhance/genmat2/2_2_our_trellis_stool.png></a>
+                        <a href=1fe8cd2490c5c851><img src=/assets/4_DataEnhance/genmat2/2_3_our_ref_stool.png></a>
+                        <a href=aa8195f1f9fddf65><img src=/assets/4_DataEnhance/genmat2/3_0_reference_fruit.png></a>
+                        <a href=f0ae1d8382a853e3><img src=/assets/4_DataEnhance/genmat2/3_1_trellis2_fruit.png></a>
+                        <a href=fa8c3edd34951d29><img src=/assets/4_DataEnhance/genmat2/3_2_our_trellis_fruit.png></a>
+                        <a href=8adce1a91e4378ec><img src=/assets/4_DataEnhance/genmat2/3_3_our_ref_fruit.png></a>
+                    </div>
+                    <h5 class=trellis-caption style=color:#000>Test Set Objects (e)--(h)</h5>
+                </div>
+
+                <div class=trellis-example>
+                    <div class=trellis-grid>
+                        <div class=trellis-heading>Reference</div>
+                        <div class=trellis-heading>TRELLIS.2</div>
+                        <div class=trellis-heading>Our<sub>trellis</sub></div>
+                        <div class=trellis-heading>Our<sub>ref</sub></div>
+                        <a href=4351500161b8df><img src=/assets/4_DataEnhance/genmat3/0_0_reference_kettle.png></a>
+                        <a href=745527d9f68ed0fb><img src=/assets/4_DataEnhance/genmat3/0_1_trellis2_kettle.png></a>
+                        <a href=215bbbe27e3ad047><img src=/assets/4_DataEnhance/genmat3/0_2_our_trellis_kettle.png></a>
+                        <a href=eeaff906ba38d550><img src=/assets/4_DataEnhance/genmat3/0_3_our_ref_kettle.png></a>
+                        <a href=77ac3d30ac5264fe><img src=/assets/4_DataEnhance/genmat3/1_0_reference_lamp.png></a>
+                        <a href=4bf27aa65fb8ff0c><img src=/assets/4_DataEnhance/genmat3/1_1_trellis2_lamp.png></a>
+                        <a href=5a179ca59ebedb6f><img src=/assets/4_DataEnhance/genmat3/1_2_our_trellis_lamp.png></a>
+                        <a href=12aa89d8038829bf><img src=/assets/4_DataEnhance/genmat3/1_3_our_ref_lamp.png></a>
+                        <a href=2e3e958eb8042b8e><img src=/assets/4_DataEnhance/genmat3/2_0_reference_monkey.png></a>
+                        <a href=6b0adf41fa568b3f><img src=/assets/4_DataEnhance/genmat3/2_1_trellis2_monkey.png></a>
+                        <a href=6af26eaf25cee40c><img src=/assets/4_DataEnhance/genmat3/2_2_our_trellis_monkey.png></a>
+                        <a href=678926034067423b><img src=/assets/4_DataEnhance/genmat3/2_3_our_ref_monkey.png></a>
+                        <a href=e20e6b68488001df><img src=/assets/4_DataEnhance/genmat3/3_0_reference_cat.png></a>
+                        <a href=bd2e7ddb13618aa8><img src=/assets/4_DataEnhance/genmat3/3_1_trellis2_cat.png></a>
+                        <a href=9e36a69361193fc3><img src=/assets/4_DataEnhance/genmat3/3_2_our_trellis_cat.png></a>
+                        <a href=f8787ecc12d054bb><img src=/assets/4_DataEnhance/genmat3/3_3_our_ref_cat.png></a>
+                    </div>
+                    <h5 class=trellis-caption style=color:#000>Test Set Objects (i)--(l)</h5>
+                </div>
+
+                <div class=trellis-example>
+                    <div class=trellis-grid>
+                        <div class=trellis-heading>Reference</div>
+                        <div class=trellis-heading>TRELLIS.2</div>
+                        <div class=trellis-heading>Our<sub>trellis</sub></div>
+                        <div class=trellis-heading>Our<sub>ref</sub></div>
+                        <a href=125ee041d1a3a8d2><img src=/assets/4_DataEnhance/genmat4/0_0_reference_sofa.png></a>
+                        <a href=c9a8057fcd097a3e><img src=/assets/4_DataEnhance/genmat4/0_1_trellis2_sofa.png></a>
+                        <a href=e8845cb6c22aa7d3><img src=/assets/4_DataEnhance/genmat4/0_2_our_trellis_sofa.png></a>
+                        <a href=949744156760697a><img src=/assets/4_DataEnhance/genmat4/0_3_our_ref_sofa.png></a>
+                        <a href=141cf9fb0896d9da><img src=/assets/4_DataEnhance/genmat4/1_0_reference_mixer.png></a>
+                        <a href=fd261c40694a3295><img src=/assets/4_DataEnhance/genmat4/1_1_trellis2_mixer.png></a>
+                        <a href=473f4b8b125d2388><img src=/assets/4_DataEnhance/genmat4/1_2_our_trellis_mixer.png></a>
+                        <a href=9fa79968c9be1dfd><img src=/assets/4_DataEnhance/genmat4/1_3_our_ref_mixer.png></a>
+                        <a href=369422c5407f6e75><img src=/assets/4_DataEnhance/genmat4/2_0_reference_icecream.png></a>
+                        <a href=214b9c35f5e5fea6><img src=/assets/4_DataEnhance/genmat4/2_1_trellis2_icecream.png></a>
+                        <a href=585d5bc7516ce150><img src=/assets/4_DataEnhance/genmat4/2_2_our_trellis_icecream.png></a>
+                        <a href=3cc8a00071c999dc><img src=/assets/4_DataEnhance/genmat4/2_3_our_ref_icecream.png></a>
+                        <a href=a065b24134fb96f1><img src=/assets/4_DataEnhance/genmat4/3_0_reference_grapes.png></a>
+                        <a href=ecd58fe26b45d7ad><img src=/assets/4_DataEnhance/genmat4/3_1_trellis2_grapes.png></a>
+                        <a href=da1e810e760bf9e7><img src=/assets/4_DataEnhance/genmat4/3_2_our_trellis_grapes.png></a>
+                        <a href=baf329310fa66f84><img src=/assets/4_DataEnhance/genmat4/3_3_our_ref_grapes.png></a>
+                    </div>
+                    <h5 class=trellis-caption style=color:#000>Test Set Objects (m)--(p)</h5>
+                </div>
+            </div>
+
+            <div>
+            <h3>Supplemental Video</h3>
+                <center>
+                    <video width=85% controls>
+                    <source src=/video.9b74570e.mp4 type=video/mp4>
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3> Acknowledgements</h3>
+            <h6 style=color:#000;text-align:justify>
+                We thank everyone who worked on the neural appearance project, in particular, Tizian Zeltner, Fabrice Rousselle, and Craig Kolb, as well as Aaron Lefohn for his support. The material test object in our paper was created by Robin Marin and released under <a href=https://creativecommons.org/licenses/by/3.0/ style=color:#4496ec>Creative Commons</a>.
+            </h6>
+            </div>
+        </div>
+    </div>
+
+
