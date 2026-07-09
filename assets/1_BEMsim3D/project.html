@@ -26,8 +26,41 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <style>
-		 .main {width:1000px; background-color:white; margin-top: 0px; margin-left: auto; margin-right:auto;  -webkit-border-radius: 10px;}
+		 .main {width:1000px; background-color:white; margin-top: 0px; margin-left: auto; margin-right:auto; padding-top: 24px; -webkit-border-radius: 10px;}
+     body {
+         padding-top: 24px;
+         padding-bottom: 24px;
+     }
+     .main > div {
+         padding-top: 12px;
+         padding-bottom: 36px;
+     }
      a {text-decoration:none}
+     h2.product-name {
+         font-size: 28px;
+         line-height: 1.25;
+         white-space: nowrap;
+     }
+     h3 {
+         margin-top: 0;
+         margin-bottom: 14px;
+     }
+     figure {
+         margin: 0 0 34px 0;
+     }
+     figure h6 {
+         margin-bottom: 0;
+     }
+     .main > div > div:not(:first-child) {
+         margin-top: 64px;
+     }
+     .fast-forward-section {
+         padding-top: 48px;
+     }
+     .author-line {
+         font-size: 17px;
+         white-space: nowrap;
+     }
      .WebContainer{
          width: 100%;
          height: auto;
@@ -40,8 +73,8 @@
         <div style="margin: 20pt 40pt 15pt 40pt; padding-top:10px">
             <div>
             <center>
-		        <h2 class="product-name text-center">A Full-Wave Reference Simulator for Computing Surface Reflectance</h1>
-		        <div class="product-tagline text-center">
+		        <h2 class="product-name text-center">A Full-Wave Reference Simulator for Computing Surface Reflectance</h2>
+		        <div class="product-tagline text-center author-line">
                 <a href="https://blaire9989.github.io" style="color:rgb(68, 150, 236);">Yunchen Yu<sup>1</sup></a>,
                 <a href="https://mandyxmq.github.io" style="color:rgb(68, 150, 236);">Mengqi Xia<sup>1,2</sup></a>,
                 <a href="https://www.graphics.cornell.edu/~bjw/" style="color:rgb(68, 150, 236);">Bruce Walter<sup>1</sup></a>,
@@ -95,16 +128,16 @@
                 BRDF values for large numbers of incident and outgoing directions,
                 by combining small simulations to characterize larger areas.
             </h6>
-           </div><br>
+           </div>
 
-           <div>
+           <div class="fast-forward-section">
             <h3>Fast Forward</h3>
                 <center>
                     <video width="85%" controls>
                     <source src="fastForward.mp4" type="video/mp4">
                     </video>
                 </center>
-            </div><br>
+            </div>
 
             <div>
                 <h3> Image Gallery</h3>
@@ -138,8 +171,6 @@
                     BRDF lobes computed for six different rough surfaces. Five incident directions were featured for each surface and five BRDF computation methods, including our full-wave simulation, were used.
                     Click on each surface to view the colorful BRDF plots!
                 </h6>
-                <br>
-                <br>
             </div>
 
             <div>
@@ -168,7 +199,7 @@
                     <source src="messy2.mp4" type="video/mp4">
                     </video>
                 </div>
-            </div><br>
+            </div>
 
             <div>
             <h3> Acknowledgements</h3>
@@ -193,4 +224,3 @@
     </div>
 </body>
 </html> 
-

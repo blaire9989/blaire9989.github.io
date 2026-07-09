@@ -5,7 +5,7 @@
   "source": "index.html",
   "scripts": {
     "build": "rm -rf .parcel-cache && npx parcel build index.html",
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "cp .gitattributes dist/.gitattributes && npx gh-pages -d dist --dotfiles"
   },
   "author": "",
   "license": "ISC"

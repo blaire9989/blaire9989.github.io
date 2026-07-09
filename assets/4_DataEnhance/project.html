@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <title>DataEnhance</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://blaire9989.github.io/assets/4_DataEnhance/project.html"/>
+    <meta property="og:title" content="Toward Richer Material Generation via Procedural Data Enhancement"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:type" content="website" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome JS-->
+    <script defer src="../fontawesome/js/all.min.js"></script>
+
+    <!-- Theme CSS -->
+    <link href="basic.css" rel="stylesheet" type="text/css" />
+    <link href="twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+    <style>
+         .main {width:1000px; background-color:white; margin-top: 0px; margin-left: auto; margin-right:auto; padding-top: 24px; -webkit-border-radius: 10px;}
+         body {
+             padding-top: 24px;
+             padding-bottom: 24px;
+         }
+         .main > div {
+             padding-top: 12px;
+             padding-bottom: 36px;
+         }
+         a {text-decoration:none}
+         h2.product-name {
+             font-size: 28px;
+             line-height: 1.25;
+             white-space: nowrap;
+         }
+         h3 {
+             margin-top: 0;
+             margin-bottom: 14px;
+         }
+         figure {
+             margin: 0 0 34px 0;
+         }
+         figure h6 {
+             margin-bottom: 0;
+         }
+         .main > div > div:not(:first-child) {
+             margin-top: 64px;
+         }
+         .author-line {
+             font-size: 17px;
+             white-space: nowrap;
+         }
+         .inactive-button {
+             cursor: default;
+             opacity: 0.65;
+         }
+         .enhancement-example {
+             margin-bottom: 42px;
+         }
+         .enhancement-grid {
+             display: grid;
+             grid-template-columns: repeat(5, 1fr);
+             gap: 10.5px;
+             width: 86%;
+             margin: 0 auto;
+         }
+         .enhancement-grid img {
+             display: block;
+             width: 100%;
+             height: auto;
+             cursor: zoom-in;
+         }
+         .enhancement-caption {
+             text-align: center;
+             margin-top: 12px;
+         }
+         .genmat-grid {
+             display: grid;
+             grid-template-columns: repeat(4, 1fr);
+             gap: 10.5px;
+             width: 86%;
+             margin: 0 auto;
+         }
+         .genmat-tile {
+             position: relative;
+             display: block;
+         }
+         .genmat-tile img {
+             display: block;
+             width: 100%;
+             height: auto;
+             cursor: zoom-in;
+         }
+         .genmat-label {
+             position: absolute;
+             top: 5px;
+             left: 7px;
+             color: black;
+             font-size: 16px;
+             font-weight: normal;
+             line-height: 1;
+         }
+         .genmat-intro {
+             margin-bottom: 24px;
+         }
+         .trellis-intro {
+             margin-top: 36px;
+             margin-bottom: 24px;
+         }
+         .trellis-example {
+             margin-bottom: 42px;
+         }
+         .trellis-grid {
+             display: grid;
+             grid-template-columns: repeat(4, 1fr);
+             gap: 10.5px;
+             width: 86%;
+             margin: 0 auto;
+         }
+         .trellis-grid img {
+             display: block;
+             width: 100%;
+             height: auto;
+             cursor: zoom-in;
+         }
+         .trellis-heading {
+             text-align: center;
+             font-size: 13px;
+             line-height: 1.2;
+         }
+         .trellis-caption {
+             text-align: center;
+             font-size: 18px;
+             margin-top: 12px;
+         }
+         .WebContainer{
+             width: 100%;
+             height: auto;
+         }
+    </style>
+</head>
+
+<body bgcolor="#ebebeb">
+    <div class="main">
+        <div style="margin: 20pt 40pt 15pt 40pt; padding-top:10px">
+            <div>
+            <center>
+                <h2 class="product-name text-center">Toward Richer Material Generation via Procedural Data Enhancement</h2>
+                <div class="product-tagline text-center author-line">
+                    <a href="https://blaire9989.github.io" style="color:rgb(68, 150, 236);">Yunchen Yu<sup>1,2</sup></a>,
+                    <a href="https://research.nvidia.com/labs/rtr/author/jacob-munkberg/" style="color:rgb(68, 150, 236);">Jacob Munkberg<sup>2</sup></a>,
+                    <a href="https://research.nvidia.com/labs/rtr/author/jon-hasselgren/" style="color:rgb(68, 150, 236);">Jon Hasselgren<sup>2</sup></a>,
+                    <a href="https://research.nvidia.com/labs/rtr/author/chris-cummings/" style="color:rgb(68, 150, 236);">Chris Cummings<sup>2</sup></a>,
+                    <a href="https://www.cs.cornell.edu/~srm/" style="color:rgb(68, 150, 236);">Steve Marschner<sup>1,2</sup></a>,
+                    <a href="https://research.nvidia.com/labs/rtr/author/andrea-weidlich/" style="color:rgb(68, 150, 236);">Andrea Weidlich<sup>2</sup></a>
+                </div>
+                <div class="product-tagline text-center"><sup>1</sup>Cornell University, <sup>2</sup>NVIDIA</div>
+                <br>
+                <div class="product-tagline text-center"> <b>SIGGRAPH 2026 Conference Proceedings</b></div>
+                <br>
+                <p><button class="w3-btn w3-blue"><a href="paper.pdf" class="text-white">Paper</a></button>
+                    <button class="w3-btn w3-blue"><a href="supplemental.pdf" class="text-white">Supplemental</a></button>
+                    <button class="w3-btn w3-blue inactive-button"><span class="text-white">Code</span></button>
+                    <button class="w3-btn w3-blue inactive-button"><span class="text-white">Data</span></button></p>
+            </center>
+            <br>
+            <figure>
+                <img src="teaser.png" width="100%"></img>
+                <figcaption>
+                <h6 style="color:black; text-align:justify;">
+                    Creating complex materials at scale is challenging. We introduce a material enhancement procedure that uplifts PBR materials into rich appearances compactly represented as neural materials. By adding surface effects, we can make an object appear waxy, peach-fuzzed, or sugar-coated (top row). Similarly, we can introduce subtle spatial specular breakup, as well as large-scale changes like clearcoat or dust layers (bottom row). Insets show the textures used by each model. Normal maps are applied unchanged to the neural material.
+                </h6>
+                </figcaption>
+            </figure>
+            </div>
+
+           <div>
+            <h3> Abstract</h3>
+            <h6 style="color:black; text-align:justify;">
+                Generative models for material creation are fundamentally limited by the quality and expressivity of available training data. Simple physically based rendering (PBR) materials, which combine a diffuse term with a single-lobe specular component, are commonly used for training but are insufficient to capture many important visual effects present in real materials.
+            </h6>
+            <h6 style="color:black; text-align:justify;">
+                We present a method that enhances simple PBR materials to more expressive ones, by augmenting the single GGX specular lobe into a layered model that captures a broader range of non-diffuse effects. Starting from a simple material, we procedurally construct a corresponding multi-lobe non-diffuse component guided by physical priors, enabling effects such as dust, clearcoat, and layered scattering. To provide a compact representation for downstream applications, we encode this component as a neural material with a shared 6D latent space, where each material instance is represented by two latent textures and decoded by a pretrained universal MLP. We further regularize the latent space to support material generation.
+            </h6>
+            <h6 style="color:black; text-align:justify;">
+                The resulting neural material dataset enables training generative models for richer material creation. To demonstrate this application, we finetune a video diffusion model to produce neural latent textures that encode our multi-lobe material, and present generative results as proof of feasibility. Our procedural data enhancement approach is an important step toward improving expressivity in material generation.
+            </h6>
+           </div>
+
+           <div>
+            <h3>Fast Forward Video</h3>
+                <center>
+                    <video width="85%" controls>
+                    <source src="fastForward.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3>Examples of Enhanced Materials</h3>
+                <h6 style="color:black; text-align:justify;">
+                    In each image group below, the first row shows the original PBR materials, the second row shows enhanced versions reconstructed as neural materials, and the third row shows differences between the original and enhanced materials.
+                </h6>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type0/0_0_pbr_bell_pbr.png"><img src="type0/0_0_pbr_bell_pbr.png"></img></a>
+                        <a href="type0/0_1_pbr_horse_pbr.png"><img src="type0/0_1_pbr_horse_pbr.png"></img></a>
+                        <a href="type0/0_2_pbr_container_pbr.png"><img src="type0/0_2_pbr_container_pbr.png"></img></a>
+                        <a href="type0/0_3_pbr_tower_pbr.png"><img src="type0/0_3_pbr_tower_pbr.png"></img></a>
+                        <a href="type0/0_4_pbr_water_pbr.png"><img src="type0/0_4_pbr_water_pbr.png"></img></a>
+                        <a href="type0/1_0_enhanced_bell_neu.png"><img src="type0/1_0_enhanced_bell_neu.png"></img></a>
+                        <a href="type0/1_1_enhanced_horse_neu.png"><img src="type0/1_1_enhanced_horse_neu.png"></img></a>
+                        <a href="type0/1_2_enhanced_container_neu.png"><img src="type0/1_2_enhanced_container_neu.png"></img></a>
+                        <a href="type0/1_3_enhanced_tower_neu.png"><img src="type0/1_3_enhanced_tower_neu.png"></img></a>
+                        <a href="type0/1_4_enhanced_water_neu.png"><img src="type0/1_4_enhanced_water_neu.png"></img></a>
+                        <a href="type0/2_0_flip_flip.bell.png"><img src="type0/2_0_flip_flip.bell.png"></img></a>
+                        <a href="type0/2_1_flip_flip.horse.png"><img src="type0/2_1_flip_flip.horse.png"></img></a>
+                        <a href="type0/2_2_flip_flip.container.png"><img src="type0/2_2_flip_flip.container.png"></img></a>
+                        <a href="type0/2_3_flip_flip.tower.png"><img src="type0/2_3_flip_flip.tower.png"></img></a>
+                        <a href="type0/2_4_flip_flip.water.png"><img src="type0/2_4_flip_flip.water.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 0: Haze</h6>
+                </div>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type1/0_0_pbr_type_1_0.png"><img src="type1/0_0_pbr_type_1_0.png"></img></a>
+                        <a href="type1/0_1_pbr_type_1_1.png"><img src="type1/0_1_pbr_type_1_1.png"></img></a>
+                        <a href="type1/0_2_pbr_type_1_2.png"><img src="type1/0_2_pbr_type_1_2.png"></img></a>
+                        <a href="type1/0_3_pbr_type_1_3.png"><img src="type1/0_3_pbr_type_1_3.png"></img></a>
+                        <a href="type1/0_4_pbr_type_1_4.png"><img src="type1/0_4_pbr_type_1_4.png"></img></a>
+                        <a href="type1/1_0_enhanced_type_1_0.png"><img src="type1/1_0_enhanced_type_1_0.png"></img></a>
+                        <a href="type1/1_1_enhanced_type_1_1.png"><img src="type1/1_1_enhanced_type_1_1.png"></img></a>
+                        <a href="type1/1_2_enhanced_type_1_2.png"><img src="type1/1_2_enhanced_type_1_2.png"></img></a>
+                        <a href="type1/1_3_enhanced_type_1_3.png"><img src="type1/1_3_enhanced_type_1_3.png"></img></a>
+                        <a href="type1/1_4_enhanced_type_1_4.png"><img src="type1/1_4_enhanced_type_1_4.png"></img></a>
+                        <a href="type1/2_0_flip_flip.type_1_0.png"><img src="type1/2_0_flip_flip.type_1_0.png"></img></a>
+                        <a href="type1/2_1_flip_flip.type_1_1.png"><img src="type1/2_1_flip_flip.type_1_1.png"></img></a>
+                        <a href="type1/2_2_flip_flip.type_1_2.png"><img src="type1/2_2_flip_flip.type_1_2.png"></img></a>
+                        <a href="type1/2_3_flip_flip.type_1_3.png"><img src="type1/2_3_flip_flip.type_1_3.png"></img></a>
+                        <a href="type1/2_4_flip_flip.type_1_4.png"><img src="type1/2_4_flip_flip.type_1_4.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 1: Dust</h6>
+                </div>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type2/0_0_pbr_type_2_0.png"><img src="type2/0_0_pbr_type_2_0.png"></img></a>
+                        <a href="type2/0_1_pbr_paintvase_pbr.png"><img src="type2/0_1_pbr_paintvase_pbr.png"></img></a>
+                        <a href="type2/0_2_pbr_elephant_pbr.png"><img src="type2/0_2_pbr_elephant_pbr.png"></img></a>
+                        <a href="type2/0_3_pbr_kettle_pbr.png"><img src="type2/0_3_pbr_kettle_pbr.png"></img></a>
+                        <a href="type2/0_4_pbr_carplate_pbr.png"><img src="type2/0_4_pbr_carplate_pbr.png"></img></a>
+                        <a href="type2/1_0_enhanced_type_2_0.png"><img src="type2/1_0_enhanced_type_2_0.png"></img></a>
+                        <a href="type2/1_1_enhanced_paintvase_neu.png"><img src="type2/1_1_enhanced_paintvase_neu.png"></img></a>
+                        <a href="type2/1_2_enhanced_elephant_neu.png"><img src="type2/1_2_enhanced_elephant_neu.png"></img></a>
+                        <a href="type2/1_3_enhanced_kettle_neu.png"><img src="type2/1_3_enhanced_kettle_neu.png"></img></a>
+                        <a href="type2/1_4_enhanced_carplate_neu.png"><img src="type2/1_4_enhanced_carplate_neu.png"></img></a>
+                        <a href="type2/2_0_flip_flip.type_2_0.png"><img src="type2/2_0_flip_flip.type_2_0.png"></img></a>
+                        <a href="type2/2_1_flip_flip.paintvase.png"><img src="type2/2_1_flip_flip.paintvase.png"></img></a>
+                        <a href="type2/2_2_flip_flip.elephant.png"><img src="type2/2_2_flip_flip.elephant.png"></img></a>
+                        <a href="type2/2_3_flip_flip.kettle.png"><img src="type2/2_3_flip_flip.kettle.png"></img></a>
+                        <a href="type2/2_4_flip_flip.carplate.png"><img src="type2/2_4_flip_flip.carplate.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 2: Clearcoat</h6>
+                </div>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type3/0_0_pbr_type_3_0.png"><img src="type3/0_0_pbr_type_3_0.png"></img></a>
+                        <a href="type3/0_1_pbr_clock_pbr.png"><img src="type3/0_1_pbr_clock_pbr.png"></img></a>
+                        <a href="type3/0_2_pbr_woodbox_pbr.png"><img src="type3/0_2_pbr_woodbox_pbr.png"></img></a>
+                        <a href="type3/0_3_pbr_leatherseat_pbr.png"><img src="type3/0_3_pbr_leatherseat_pbr.png"></img></a>
+                        <a href="type3/0_4_pbr_type_3_2.png"><img src="type3/0_4_pbr_type_3_2.png"></img></a>
+                        <a href="type3/1_0_enhanced_type_3_0.png"><img src="type3/1_0_enhanced_type_3_0.png"></img></a>
+                        <a href="type3/1_1_enhanced_clock_neu.png"><img src="type3/1_1_enhanced_clock_neu.png"></img></a>
+                        <a href="type3/1_2_enhanced_woodbox_neu.png"><img src="type3/1_2_enhanced_woodbox_neu.png"></img></a>
+                        <a href="type3/1_3_enhanced_leatherseat_neu.png"><img src="type3/1_3_enhanced_leatherseat_neu.png"></img></a>
+                        <a href="type3/1_4_enhanced_type_3_2.png"><img src="type3/1_4_enhanced_type_3_2.png"></img></a>
+                        <a href="type3/2_0_flip_flip.type_3_0.png"><img src="type3/2_0_flip_flip.type_3_0.png"></img></a>
+                        <a href="type3/2_1_flip_flip.clock.png"><img src="type3/2_1_flip_flip.clock.png"></img></a>
+                        <a href="type3/2_2_flip_flip.woodbox.png"><img src="type3/2_2_flip_flip.woodbox.png"></img></a>
+                        <a href="type3/2_3_flip_flip.leatherseat.png"><img src="type3/2_3_flip_flip.leatherseat.png"></img></a>
+                        <a href="type3/2_4_flip_flip.type_3_2.png"><img src="type3/2_4_flip_flip.type_3_2.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 3: Dust + Clearcoat</h6>
+                </div>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type4/0_0_pbr_teddy_pbr.png"><img src="type4/0_0_pbr_teddy_pbr.png"></img></a>
+                        <a href="type4/0_1_pbr_piggy_pbr.png"><img src="type4/0_1_pbr_piggy_pbr.png"></img></a>
+                        <a href="type4/0_2_pbr_cactus_pbr.png"><img src="type4/0_2_pbr_cactus_pbr.png"></img></a>
+                        <a href="type4/0_3_pbr_greenduck_pbr.png"><img src="type4/0_3_pbr_greenduck_pbr.png"></img></a>
+                        <a href="type4/0_4_pbr_dirtysofa_pbr.png"><img src="type4/0_4_pbr_dirtysofa_pbr.png"></img></a>
+                        <a href="type4/1_0_enhanced_teddy_neu.png"><img src="type4/1_0_enhanced_teddy_neu.png"></img></a>
+                        <a href="type4/1_1_enhanced_piggy_neu.png"><img src="type4/1_1_enhanced_piggy_neu.png"></img></a>
+                        <a href="type4/1_2_enhanced_cactus_neu.png"><img src="type4/1_2_enhanced_cactus_neu.png"></img></a>
+                        <a href="type4/1_3_enhanced_greenduck_neu.png"><img src="type4/1_3_enhanced_greenduck_neu.png"></img></a>
+                        <a href="type4/1_4_enhanced_dirtysofa_neu.png"><img src="type4/1_4_enhanced_dirtysofa_neu.png"></img></a>
+                        <a href="type4/2_0_flip_flip.teddy.png"><img src="type4/2_0_flip_flip.teddy.png"></img></a>
+                        <a href="type4/2_1_flip_flip.piggy.png"><img src="type4/2_1_flip_flip.piggy.png"></img></a>
+                        <a href="type4/2_2_flip_flip.cactus.png"><img src="type4/2_2_flip_flip.cactus.png"></img></a>
+                        <a href="type4/2_3_flip_flip.greenduck.png"><img src="type4/2_3_flip_flip.greenduck.png"></img></a>
+                        <a href="type4/2_4_flip_flip.dirtysofa.png"><img src="type4/2_4_flip_flip.dirtysofa.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 4: Fuzz + Inner Scatter + Subcutaneous Scatter</h6>
+                </div>
+                <div class="enhancement-example">
+                    <div class="enhancement-grid">
+                        <a href="type5/0_0_pbr_melonpillow_pbr.png"><img src="type5/0_0_pbr_melonpillow_pbr.png"></img></a>
+                        <a href="type5/0_1_pbr_yellowduck_pbr.png"><img src="type5/0_1_pbr_yellowduck_pbr.png"></img></a>
+                        <a href="type5/0_2_pbr_jellyshoe_pbr.png"><img src="type5/0_2_pbr_jellyshoe_pbr.png"></img></a>
+                        <a href="type5/0_3_pbr_balloon_pbr.png"><img src="type5/0_3_pbr_balloon_pbr.png"></img></a>
+                        <a href="type5/0_4_pbr_pumpkin_pbr.png"><img src="type5/0_4_pbr_pumpkin_pbr.png"></img></a>
+                        <a href="type5/1_0_enhanced_melonpillow_neu.png"><img src="type5/1_0_enhanced_melonpillow_neu.png"></img></a>
+                        <a href="type5/1_1_enhanced_yellowduck_neu.png"><img src="type5/1_1_enhanced_yellowduck_neu.png"></img></a>
+                        <a href="type5/1_2_enhanced_jellyshoe_neu.png"><img src="type5/1_2_enhanced_jellyshoe_neu.png"></img></a>
+                        <a href="type5/1_3_enhanced_balloon_neu.png"><img src="type5/1_3_enhanced_balloon_neu.png"></img></a>
+                        <a href="type5/1_4_enhanced_pumpkin_neu.png"><img src="type5/1_4_enhanced_pumpkin_neu.png"></img></a>
+                        <a href="type5/2_0_flip_flip.melonpillow.png"><img src="type5/2_0_flip_flip.melonpillow.png"></img></a>
+                        <a href="type5/2_1_flip_flip.yellowduck.png"><img src="type5/2_1_flip_flip.yellowduck.png"></img></a>
+                        <a href="type5/2_2_flip_flip.jellyshoe.png"><img src="type5/2_2_flip_flip.jellyshoe.png"></img></a>
+                        <a href="type5/2_3_flip_flip.balloon.png"><img src="type5/2_3_flip_flip.balloon.png"></img></a>
+                        <a href="type5/2_4_flip_flip.pumpkin.png"><img src="type5/2_4_flip_flip.pumpkin.png"></img></a>
+                    </div>
+                    <h6 class="enhancement-caption" style="color:black;">Type 5: Fuzz + Clearcoat + Inner Scatter + Subcutaneous Scatter</h6>
+                </div>
+            </div>
+
+            <div>
+            <h3>Generative Results</h3>
+                <h6 class="genmat-intro" style="color:black; text-align:justify;">
+                    We first present our generated neural materials for all the 3D models in our test set. Intended enhancement types of these assets' reference neural materials are haze (a), dust (b, c), clearcoat (d, e, f, g), dust + clearcoat (h, i), fuzz + scatter (j, k, l, m), all lobes (n, o, p).
+                </h6>
+                <div class="genmat-grid">
+                    <a class="genmat-tile" href="genmat0/a_car_beetle.png"><img src="genmat0/a_car_beetle.png"></img><span class="genmat-label">(a)</span></a>
+                    <a class="genmat-tile" href="genmat0/b_vase_gold.png"><img src="genmat0/b_vase_gold.png"></img><span class="genmat-label">(b)</span></a>
+                    <a class="genmat-tile" href="genmat0/c_shoes.png"><img src="genmat0/c_shoes.png"></img><span class="genmat-label">(c)</span></a>
+                    <a class="genmat-tile" href="genmat0/d_pepsi_can.png"><img src="genmat0/d_pepsi_can.png"></img><span class="genmat-label">(d)</span></a>
+                    <a class="genmat-tile" href="genmat0/e_vase_marble.png"><img src="genmat0/e_vase_marble.png"></img><span class="genmat-label">(e)</span></a>
+                    <a class="genmat-tile" href="genmat0/f_kettle_china.png"><img src="genmat0/f_kettle_china.png"></img><span class="genmat-label">(f)</span></a>
+                    <a class="genmat-tile" href="genmat0/g_bar_stool.png"><img src="genmat0/g_bar_stool.png"></img><span class="genmat-label">(g)</span></a>
+                    <a class="genmat-tile" href="genmat0/h_pomegranate.png"><img src="genmat0/h_pomegranate.png"></img><span class="genmat-label">(h)</span></a>
+                    <a class="genmat-tile" href="genmat0/i_kettle_copper.png"><img src="genmat0/i_kettle_copper.png"></img><span class="genmat-label">(i)</span></a>
+                    <a class="genmat-tile" href="genmat0/j_lamp.png"><img src="genmat0/j_lamp.png"></img><span class="genmat-label">(j)</span></a>
+                    <a class="genmat-tile" href="genmat0/k_monkey.png"><img src="genmat0/k_monkey.png"></img><span class="genmat-label">(k)</span></a>
+                    <a class="genmat-tile" href="genmat0/l_cat.png"><img src="genmat0/l_cat.png"></img><span class="genmat-label">(l)</span></a>
+                    <a class="genmat-tile" href="genmat0/m_leather_chair.png"><img src="genmat0/m_leather_chair.png"></img><span class="genmat-label">(m)</span></a>
+                    <a class="genmat-tile" href="genmat0/n_mixer.png"><img src="genmat0/n_mixer.png"></img><span class="genmat-label">(n)</span></a>
+                    <a class="genmat-tile" href="genmat0/o_icecream.png"><img src="genmat0/o_icecream.png"></img><span class="genmat-label">(o)</span></a>
+                    <a class="genmat-tile" href="genmat0/p_grapes.png"><img src="genmat0/p_grapes.png"></img><span class="genmat-label">(p)</span></a>
+                </div>
+
+                <h6 class="trellis-intro" style="color:black; text-align:justify;">
+                    We compare our generation with TRELLIS.2 and render the test set materials in four variants: the reference, hand-crafted neural materials, PBR materials generated from TRELLIS.2, base color from TRELLIS.2 combined with neural, non-diffuse materials generated from our method, and known base color combined with our generated neural materials.
+                </h6>
+
+                <div class="trellis-example">
+                    <div class="trellis-grid">
+                        <div class="trellis-heading">Reference</div>
+                        <div class="trellis-heading">TRELLIS.2</div>
+                        <div class="trellis-heading">Our<sub>trellis</sub></div>
+                        <div class="trellis-heading">Our<sub>ref</sub></div>
+                        <a href="genmat1/0_0_reference_car.png"><img src="genmat1/0_0_reference_car.png"></img></a>
+                        <a href="genmat1/0_1_trellis2_car.png"><img src="genmat1/0_1_trellis2_car.png"></img></a>
+                        <a href="genmat1/0_2_our_trellis_car.png"><img src="genmat1/0_2_our_trellis_car.png"></img></a>
+                        <a href="genmat1/0_3_our_ref_car.png"><img src="genmat1/0_3_our_ref_car.png"></img></a>
+                        <a href="genmat1/1_0_reference_marble.png"><img src="genmat1/1_0_reference_marble.png"></img></a>
+                        <a href="genmat1/1_1_trellis2_marble.png"><img src="genmat1/1_1_trellis2_marble.png"></img></a>
+                        <a href="genmat1/1_2_our_trellis_marble.png"><img src="genmat1/1_2_our_trellis_marble.png"></img></a>
+                        <a href="genmat1/1_3_our_ref_marble.png"><img src="genmat1/1_3_our_ref_marble.png"></img></a>
+                        <a href="genmat1/2_0_reference_shoes.png"><img src="genmat1/2_0_reference_shoes.png"></img></a>
+                        <a href="genmat1/2_1_trellis2_shoes.png"><img src="genmat1/2_1_trellis2_shoes.png"></img></a>
+                        <a href="genmat1/2_2_our_trellis_shoes.png"><img src="genmat1/2_2_our_trellis_shoes.png"></img></a>
+                        <a href="genmat1/2_3_our_ref_shoes.png"><img src="genmat1/2_3_our_ref_shoes.png"></img></a>
+                        <a href="genmat1/3_0_reference_pepsi.png"><img src="genmat1/3_0_reference_pepsi.png"></img></a>
+                        <a href="genmat1/3_1_trellis2_pepsi.png"><img src="genmat1/3_1_trellis2_pepsi.png"></img></a>
+                        <a href="genmat1/3_2_our_trellis_pepsi.png"><img src="genmat1/3_2_our_trellis_pepsi.png"></img></a>
+                        <a href="genmat1/3_3_our_ref_pepsi.png"><img src="genmat1/3_3_our_ref_pepsi.png"></img></a>
+                    </div>
+                    <h5 class="trellis-caption" style="color:black;">Test Set Objects (a)--(d)</h5>
+                </div>
+
+                <div class="trellis-example">
+                    <div class="trellis-grid">
+                        <div class="trellis-heading">Reference</div>
+                        <div class="trellis-heading">TRELLIS.2</div>
+                        <div class="trellis-heading">Our<sub>trellis</sub></div>
+                        <div class="trellis-heading">Our<sub>ref</sub></div>
+                        <a href="genmat2/0_0_reference_vase.png"><img src="genmat2/0_0_reference_vase.png"></img></a>
+                        <a href="genmat2/0_1_trellis2_vase.png"><img src="genmat2/0_1_trellis2_vase.png"></img></a>
+                        <a href="genmat2/0_2_our_trellis_vase.png"><img src="genmat2/0_2_our_trellis_vase.png"></img></a>
+                        <a href="genmat2/0_3_our_ref_vase.png"><img src="genmat2/0_3_our_ref_vase.png"></img></a>
+                        <a href="genmat2/1_0_reference_china.png"><img src="genmat2/1_0_reference_china.png"></img></a>
+                        <a href="genmat2/1_1_trellis2_china.png"><img src="genmat2/1_1_trellis2_china.png"></img></a>
+                        <a href="genmat2/1_2_our_trellis_china.png"><img src="genmat2/1_2_our_trellis_china.png"></img></a>
+                        <a href="genmat2/1_3_our_ref_china.png"><img src="genmat2/1_3_our_ref_china.png"></img></a>
+                        <a href="genmat2/2_0_reference_stool.png"><img src="genmat2/2_0_reference_stool.png"></img></a>
+                        <a href="genmat2/2_1_trellis2_stool.png"><img src="genmat2/2_1_trellis2_stool.png"></img></a>
+                        <a href="genmat2/2_2_our_trellis_stool.png"><img src="genmat2/2_2_our_trellis_stool.png"></img></a>
+                        <a href="genmat2/2_3_our_ref_stool.png"><img src="genmat2/2_3_our_ref_stool.png"></img></a>
+                        <a href="genmat2/3_0_reference_fruit.png"><img src="genmat2/3_0_reference_fruit.png"></img></a>
+                        <a href="genmat2/3_1_trellis2_fruit.png"><img src="genmat2/3_1_trellis2_fruit.png"></img></a>
+                        <a href="genmat2/3_2_our_trellis_fruit.png"><img src="genmat2/3_2_our_trellis_fruit.png"></img></a>
+                        <a href="genmat2/3_3_our_ref_fruit.png"><img src="genmat2/3_3_our_ref_fruit.png"></img></a>
+                    </div>
+                    <h5 class="trellis-caption" style="color:black;">Test Set Objects (e)--(h)</h5>
+                </div>
+
+                <div class="trellis-example">
+                    <div class="trellis-grid">
+                        <div class="trellis-heading">Reference</div>
+                        <div class="trellis-heading">TRELLIS.2</div>
+                        <div class="trellis-heading">Our<sub>trellis</sub></div>
+                        <div class="trellis-heading">Our<sub>ref</sub></div>
+                        <a href="genmat3/0_0_reference_kettle.png"><img src="genmat3/0_0_reference_kettle.png"></img></a>
+                        <a href="genmat3/0_1_trellis2_kettle.png"><img src="genmat3/0_1_trellis2_kettle.png"></img></a>
+                        <a href="genmat3/0_2_our_trellis_kettle.png"><img src="genmat3/0_2_our_trellis_kettle.png"></img></a>
+                        <a href="genmat3/0_3_our_ref_kettle.png"><img src="genmat3/0_3_our_ref_kettle.png"></img></a>
+                        <a href="genmat3/1_0_reference_lamp.png"><img src="genmat3/1_0_reference_lamp.png"></img></a>
+                        <a href="genmat3/1_1_trellis2_lamp.png"><img src="genmat3/1_1_trellis2_lamp.png"></img></a>
+                        <a href="genmat3/1_2_our_trellis_lamp.png"><img src="genmat3/1_2_our_trellis_lamp.png"></img></a>
+                        <a href="genmat3/1_3_our_ref_lamp.png"><img src="genmat3/1_3_our_ref_lamp.png"></img></a>
+                        <a href="genmat3/2_0_reference_monkey.png"><img src="genmat3/2_0_reference_monkey.png"></img></a>
+                        <a href="genmat3/2_1_trellis2_monkey.png"><img src="genmat3/2_1_trellis2_monkey.png"></img></a>
+                        <a href="genmat3/2_2_our_trellis_monkey.png"><img src="genmat3/2_2_our_trellis_monkey.png"></img></a>
+                        <a href="genmat3/2_3_our_ref_monkey.png"><img src="genmat3/2_3_our_ref_monkey.png"></img></a>
+                        <a href="genmat3/3_0_reference_cat.png"><img src="genmat3/3_0_reference_cat.png"></img></a>
+                        <a href="genmat3/3_1_trellis2_cat.png"><img src="genmat3/3_1_trellis2_cat.png"></img></a>
+                        <a href="genmat3/3_2_our_trellis_cat.png"><img src="genmat3/3_2_our_trellis_cat.png"></img></a>
+                        <a href="genmat3/3_3_our_ref_cat.png"><img src="genmat3/3_3_our_ref_cat.png"></img></a>
+                    </div>
+                    <h5 class="trellis-caption" style="color:black;">Test Set Objects (i)--(l)</h5>
+                </div>
+
+                <div class="trellis-example">
+                    <div class="trellis-grid">
+                        <div class="trellis-heading">Reference</div>
+                        <div class="trellis-heading">TRELLIS.2</div>
+                        <div class="trellis-heading">Our<sub>trellis</sub></div>
+                        <div class="trellis-heading">Our<sub>ref</sub></div>
+                        <a href="genmat4/0_0_reference_sofa.png"><img src="genmat4/0_0_reference_sofa.png"></img></a>
+                        <a href="genmat4/0_1_trellis2_sofa.png"><img src="genmat4/0_1_trellis2_sofa.png"></img></a>
+                        <a href="genmat4/0_2_our_trellis_sofa.png"><img src="genmat4/0_2_our_trellis_sofa.png"></img></a>
+                        <a href="genmat4/0_3_our_ref_sofa.png"><img src="genmat4/0_3_our_ref_sofa.png"></img></a>
+                        <a href="genmat4/1_0_reference_mixer.png"><img src="genmat4/1_0_reference_mixer.png"></img></a>
+                        <a href="genmat4/1_1_trellis2_mixer.png"><img src="genmat4/1_1_trellis2_mixer.png"></img></a>
+                        <a href="genmat4/1_2_our_trellis_mixer.png"><img src="genmat4/1_2_our_trellis_mixer.png"></img></a>
+                        <a href="genmat4/1_3_our_ref_mixer.png"><img src="genmat4/1_3_our_ref_mixer.png"></img></a>
+                        <a href="genmat4/2_0_reference_icecream.png"><img src="genmat4/2_0_reference_icecream.png"></img></a>
+                        <a href="genmat4/2_1_trellis2_icecream.png"><img src="genmat4/2_1_trellis2_icecream.png"></img></a>
+                        <a href="genmat4/2_2_our_trellis_icecream.png"><img src="genmat4/2_2_our_trellis_icecream.png"></img></a>
+                        <a href="genmat4/2_3_our_ref_icecream.png"><img src="genmat4/2_3_our_ref_icecream.png"></img></a>
+                        <a href="genmat4/3_0_reference_grapes.png"><img src="genmat4/3_0_reference_grapes.png"></img></a>
+                        <a href="genmat4/3_1_trellis2_grapes.png"><img src="genmat4/3_1_trellis2_grapes.png"></img></a>
+                        <a href="genmat4/3_2_our_trellis_grapes.png"><img src="genmat4/3_2_our_trellis_grapes.png"></img></a>
+                        <a href="genmat4/3_3_our_ref_grapes.png"><img src="genmat4/3_3_our_ref_grapes.png"></img></a>
+                    </div>
+                    <h5 class="trellis-caption" style="color:black;">Test Set Objects (m)--(p)</h5>
+                </div>
+            </div>
+
+            <div>
+            <h3>Supplemental Video</h3>
+                <center>
+                    <video width="85%" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+
+            <div>
+            <h3> Acknowledgements</h3>
+            <h6 style="color:black; text-align:justify;">
+                We thank everyone who worked on the neural appearance project, in particular, Tizian Zeltner, Fabrice Rousselle, and Craig Kolb, as well as Aaron Lefohn for his support. The material test object in our paper was created by Robin Marin and released under <a href="https://creativecommons.org/licenses/by/3.0/" style="color:rgb(68, 150, 236);">Creative Commons</a>.
+            </h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
